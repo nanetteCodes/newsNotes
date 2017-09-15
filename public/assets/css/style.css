@@ -37,6 +37,6 @@
 .card-color2{
   background-color: #475f92;
 }
-.card-format{
-background-image: url("/assets/images/gradient.jpg");
+.card-content{
+height: 300px
 }

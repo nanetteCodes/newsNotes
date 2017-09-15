@@ -24,6 +24,7 @@ $.getJSON("/blogs", function(data) {
   }
 });
 
+
 //save blogs btn route
 $(document).on("click", "#save", function() {
  console.log('saved');
@@ -45,6 +46,7 @@ $(document).on("click", "#notesModal", function() {
   $("#notes").empty();
   // Save the id
   var thisId = $(this).attr("data-id");
+
   // Now make an ajax call for the blog
   $.ajax({
     method: "GET",
@@ -52,22 +54,23 @@ $(document).on("click", "#notesModal", function() {
   })
   // With that done, add the note information to the page
     .done(function(data) {
-      console.log(data.body);
+      console.log(data);
       // title of the article
-      // $("#notes").append("<h4 class = 'center-align'>" + data.title + "</h4><div class='row'><form class = 'col s12'><div class='row'><div class='input-field col s12'><i class='material-icons prefix'>mode_edit</i>");
-      // // textarea to add a new note body
-      // $("#notes").append("<textarea id='bodyinput' class='materialize-texterea' name='body'></textarea>" + data.body + "</div></div></form></div></div>");
-      // // button to submit a new note, with the id of the article saved to it
-      // $("#notes").append("<div class='modal-footer'><a data-id='" + data._id + "' id='savenote' class='modal-action modal-close waves-effect waves-green btn-flat'>Save Note</a></div>");
+      $("#notes").append("<h4 class = 'center-align'>" + data.title + "</h4><div class='row'><form class = 'col s12'><div class='row'><div class='input-field col s12'><i class='material-icons prefix'>mode_edit</i>");
+      // textarea to add a new note body
+      $("#notes").append("<textarea id='bodyinput' class='materialize-texterea' name='body'></textarea>" + data.body + "</div></div></form></div></div>");
+      // button to submit a new note, with the id of the article saved to it
+      $("#notes").append("<div class='modal-footer'><a data-id='" + data._id + "' id='savenote' class='modal-action modal-close waves-effect waves-green btn-flat'>Save Note</a></div>");
 
       // If there's a note in the article
       if (data.note) {
+        // Place the title of the note in the title input
+        $("#titleinput").val(data.note.title);
         // Place the body of the note in the body textarea
         $("#bodyinput").val(data.note.body);
       }
     });
 });
-
 // When you click the save note button in modal
 $(document).on("click", "#saveBtn", function() {
   // Grab the id associated with the article from the submit button
@@ -78,26 +81,21 @@ $(document).on("click", "#saveBtn", function() {
     method: "POST",
     url: "/blogs/" + thisId,
     data: {
+      // Value taken from title input
+      title: $("#titleinput").val(),
       // Value taken from note textarea
-      body: $("#bodyinput").val(),
-      created: Date.now()
+      body: $("#bodyinput").val()
     }
   })
     // With that done
     .done(function(data) {
+      // Log the response
+      console.log(data);
       // Empty the notes section
       $("#notes").empty();
-      // Grab all of the current notes
-      $.getJSON("/blogs", function(data) {
-        // For each note...
-        for (var i = 0; i < data.length; i++) {
-          // populate #notes with a p-tag that includes the note's title and object id
-          $("#notes").prepend("<p class='dataentry' data-id=" + data[i]._id + "><span class='dataNote' data-id=" +
-            data[i]._id + ">" + data[i].note + "</span><span class=deleter>X</span></p>");
-        }
-      });
     });
 
-  // clears the values entered in textarea for note entry
+  // Also, remove the values entered in the input and textarea for note entry
+  $("#titleinput").val("");
   $("#bodyinput").val("");
 });
