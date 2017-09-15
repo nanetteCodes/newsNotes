@@ -21,9 +21,8 @@ app.use(express.static("public"));
 var databaseUrl = "techCrunch";
 var collections = ['blog'];
 
-// Database configuration for mongoose
 // db: techCrunch
-mongoose.connect("mongodb://localhost/techCrunch", { useMongoClient: true });
+mongoose.connect('mongodb://heroku_2x4xz5dh:j6pg3ihg218t5n50go39d5cp97@ds135594.mlab.com:35594/heroku_2x4xz5dh', { useMongoClient: true });
 mongoose.connection.on("connection", function(){
   console.log("mongoose connection");
 });
