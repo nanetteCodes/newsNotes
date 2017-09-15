@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Tech Blog</title>
+    <!-- fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
+    <!-- Meterialize icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Metrialize Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/css/materialize.min.css">
+    <!-- JQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+  </head>
+  <body>
+    <!-- Notes Modal Structure -->
+    <div id="modalNotes" class="modal">
+      <div class="modal-content">
+
+        <h4 class ="center-align">Notes</h4>
+        <div class="row">
+          <form class="col s12">
+            <div class="row">
+              <div class="input-field col s12">
+                <i class='material-icons prefix'>mode_edit</i>
+                <textarea id='bodyinput' class='materialize-textarea' ></textarea>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class='modal-footer'>
+        <a  class='modal-action modal-close waves-effect waves-green btn-flat' id ="saveBtn">Save</a>
+      </div>
+    </div><!--notes-->
+
+    <!-- parallax image 1 -->
+    <div class="parallax-container">
+      <div class="parallax">
+        <img id="parallax1" src="./assets/images/marble-wallpaper.jpg">
+      </div>
+    </div>
+    <h1 class ="saved-h1"> SAVED SCRAPES</h1>
+
+    <nav>
+    <div class="nav-wrapper navi">
+      <a href="/" class="brand-logo right"><i class="material-icons left">home</i></a>
+      <ul id="nav-list">
+        <li><a href=""></a></li>
+        <li><a href=""></a></a></li>
+      </ul>
+    </div>
+  </nav>
+  <!-- blog cards -->
+  <div class="main">
+    <div class="row" id="saved-cards">
+
+
+      <!-- <div class="col s12">
+        <div class="card card-color darken-1 z-depth-5">
+          <div class="card-content white-text" id="">
+            <span class="card-title">Card Title</span>
+              <p>Earlier on Tuesday, at different conferences around New York, JPMorgan Chase chief executive Jamie Dimon took aim at bitcoin, calling the cryptocurrency “a fraud” and “worse than tulip bulbs.” This skepticism by one of Wall Street’s titans, and its reflection in many offices and hallways in top financial services companies, is perhaps one of the strongest </p>
+          </div>
+          <div class="card-action">
+
+
+              <a href="#" id="delete-note"><i class="material-icons right">delete</i></a>
+              <a href="#modalNotes" class="modal-trigger editBtn" id='notesModal'  onclick=""><i class="material-icons right">edit</i></a>
+          </div>
+        </div>
+      </div> -->
+
+
+    </div>
+  </div>
+
+
+    <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/js/materialize.min.js"></script>
+
+    <script src="/app.js"></script>
+  </body>
+</html>

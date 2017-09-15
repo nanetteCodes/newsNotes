@@ -1,0 +1,42 @@
+.main{
+  background-image: url("/assets/images/gradient.jpg");
+}
+.main-saved{
+  background-image: url("/assets/images/marble-wallpaper.jpg")
+}
+.index-h1{
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-size: 120px;
+  position: absolute;
+  bottom:65%;
+  right:30%;
+  color: #5a495e;
+  text-shadow: 2px 2px 2px #967c21;
+}
+
+.saved-h1{
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-size: 120px;
+  position: absolute;
+  bottom:65%;
+  right:35%;
+  color: #5a495e;
+  text-shadow: 2px 2px 2px #967c21;
+}
+
+.home{
+  font-size: 200px;
+}
+.navi{
+  background-color: #967c21;
+}
+.card-color{
+  background-color: #5a495e;
+  opacity: .45;
+}
+.card-color2{
+  background-color: #475f92;
+}
+.card-format{
+background-image: url("/assets/images/gradient.jpg");
+}
